@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: mctc-demo
+  namespace: argocd
+spec:
+  generators:
+    - list:
+        elements:
+          - cluster: mctc-control-plane
+            url: https://kubernetes.default.svc
+  template:
+    metadata:
+      name: '{{cluster}}-mctc-demo'
+    spec:
+      project: default
+      source:
+        repoURL: 'https://github.com/R-Lawton/mctc_phase2-demo.git'
+        targetRevision: HEAD
+        path: config/kuadrant/
+      destination:
+        server: '{{url}}'
+        namespace: mctc-demo
+      syncPolicy:
+        automated:
+          prune: true
+        syncOptions:
+          - CreateNamespace=true
