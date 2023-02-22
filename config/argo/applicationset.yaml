@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: mctc-demo
+  name: demo-mctc
   namespace: argocd
 spec:
   generators:
     - list:
         elements:
-          - cluster: kind-mctc-workload-1
-            url: https://kubernetes.default.svc
+          - cluster: mctc-workload-1
+            url: https://mctc-workload-1-control-plane:6443
   template:
     metadata:
       name: '{{cluster}}-mctc-demo'
@@ -19,7 +19,7 @@ spec:
         targetRevision: HEAD
         path: config/kuadrant/
       destination:
-        server: '{{url}}'
+        name: '{{cluster}}'
         namespace: mctc-demo
       syncPolicy:
         automated:
