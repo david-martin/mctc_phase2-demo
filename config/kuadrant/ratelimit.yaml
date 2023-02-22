@@ -20,5 +20,4 @@ spec:
           - "limited == 1"
         maxValue: 2
         seconds: 10
-        variables: []
     
