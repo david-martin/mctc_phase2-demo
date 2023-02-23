@@ -17,7 +17,7 @@ spec:
       source:
         repoURL: 'https://github.com/R-Lawton/mctc_phase2-demo.git'
         targetRevision: HEAD
-        path: config/kuadrant/
+        path: config/
       destination:
         name: '{{cluster}}'
         namespace: mctc-demo
