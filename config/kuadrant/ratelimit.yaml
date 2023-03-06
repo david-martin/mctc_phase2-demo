@@ -9,7 +9,7 @@ spec:
     name: mctc-demo
   rateLimits:
    - rules:
-        - hosts: ["m2demo.dev.hcpapps.net"]
+        - hosts: ["m2demo.dm.dev.hcpapps.net"]
      configurations:
         - actions:
             - generic_key:
