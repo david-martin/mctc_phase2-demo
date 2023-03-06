@@ -4,7 +4,7 @@ metadata:
   name: mctc-demo
 spec:
   hostnames:
-  - "m2demo.dm.dev.hcpapps.net"
+  - "m2demo.apps.davemartin.io"
   parentRefs:
   - group: gateway.networking.k8s.io
     kind: Gateway

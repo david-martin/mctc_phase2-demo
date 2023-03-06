@@ -18,7 +18,7 @@ spec:
       project: default
       source:
         repoURL: 'https://github.com/david-martin/mctc_phase2-demo.git'
-        targetRevision: m2_demo_dm
+        targetRevision: m2_demo_davemartinio
         directory:
           recurse: true    
         path: config/
