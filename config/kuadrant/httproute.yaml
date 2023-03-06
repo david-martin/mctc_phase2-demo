@@ -4,12 +4,12 @@ metadata:
   name: mctc-demo
 spec:
   hostnames:
-  - "test.example.com"
+  - "m2demo.dev.hcpapps.net"
   parentRefs:
   - group: gateway.networking.k8s.io
     kind: Gateway
-    name: istio
-    namespace: istio-system
+    name: example-gateway
+    namespace: mctc-downstream
   rules:
   - backendRefs:
     - group: ""
@@ -21,4 +21,4 @@ spec:
     - method: GET
       path:
         type: PathPrefix
-        value: /demo
+        value: /

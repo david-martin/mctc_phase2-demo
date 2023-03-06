@@ -9,14 +9,16 @@ spec:
         elements:
           - cluster: mctc-workload-1
             url: https://mctc-workload-1-control-plane:6443
+          - cluster: mctc-workload-2
+            url: https://mctc-workload-1-control-plane:6443
   template:
     metadata:
       name: '{{cluster}}-mctc-demo'
     spec:
       project: default
       source:
-        repoURL: 'https://github.com/R-Lawton/mctc_phase2-demo.git'
-        targetRevision: HEAD
+        repoURL: 'https://github.com/david-martin/mctc_phase2-demo.git'
+        targetRevision: m2_demo
         directory:
           recurse: true    
         path: config/
