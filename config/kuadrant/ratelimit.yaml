@@ -18,6 +18,6 @@ spec:
      limits:
       - conditions:
           - "limited == 1"
-        maxValue: 2
-        seconds: 20
+        maxValue: 3
+        seconds: 10
     
